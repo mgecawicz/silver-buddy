@@ -7,6 +7,47 @@ yarn-error.log*
 lerna-debug.log*
 .pnpm-debug.log*
 
+# Secrets
+.env
+
+# Local .terraform directories
+**/.terraform/
+
+# Terraform state files
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Exclude all .tfvars files, which are likely to contain sensitive data, such as
+# passwords, private keys, and other secrets. These should not be part of version
+# control as they are data points which are potentially sensitive and subject
+# to change depending on the environment.
+*.tfvars
+*.tfvars.json
+
+# Terraform override files
+# These files are typically used for local development or testing and should not
+# be committed to version control.
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Terraform plan files
+*.tfplan
+
+# Terraform CLI configuration files
+.terraformrc
+
+# Provider lock file
+# While some advocate for committing this, it's often better to keep it local
+# to prevent unnecessary diffs or conflicts in multi-developer environments,
+# especially when platforms or provider versions differ.
+.terraform.lock.hcl
+
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
