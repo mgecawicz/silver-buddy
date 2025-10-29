@@ -28,6 +28,9 @@ crash.*.log
 *.tfvars
 *.tfvars.json
 
+# Temporary files
+*.zip
+
 # Terraform override files
 # These files are typically used for local development or testing and should not
 # be committed to version control.
