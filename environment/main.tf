@@ -30,7 +30,7 @@ resource "aws_lambda_function" "silver_api_lambda" {
   s3_key = aws_s3_object.primary_api_code.key
 
   runtime = "nodejs20.x"
-  handler = "hello.handler"
+  handler = "api-health.handler"
   source_code_hash = data.archive_file.primary_api.output_base64sha256
   role = aws_iam_role.lambda_exec.arn
 }
@@ -116,7 +116,7 @@ resource "aws_apigatewayv2_integration" "silver_api" {
 resource "aws_apigatewayv2_route" "silver_api" {
   api_id = aws_apigatewayv2_api.lambda.id
 
-  route_key = "GET /hello"
+  route_key = "GET /health"
   target    = "integrations/${aws_apigatewayv2_integration.silver_api.id}"
 }
 
